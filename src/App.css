@@ -7,7 +7,6 @@ html {
   font-family: "Nunito", sans-serif;
   background-image: url("./images/Background/Background.svg");
 }
-
 .App {
   position: relative;
   display: flex;
@@ -311,7 +310,9 @@ button:hover {
   display: flex;
   align-items: center;
 }
-
+.weather-details .detail-icon-text img {
+  filter: brightness(2);
+}
 .weather-details .detail-icon-text span {
   margin-left: 30px;
   color: white;
