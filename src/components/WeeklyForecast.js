@@ -31,7 +31,7 @@ function WeeklyForecast({ data }) {
   };
   useEffect(() => { 
 
-    console.log('Weekly forecast data:', forecastDays);
+    //console.log('Weekly forecast data:', forecastDays);
   }, [forecastDays]);
   return (
     <div className="weekly-forecast">

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import logo from "../images/logo/marca.svg";
 import { fetchCities } from "../api/CitiesAPI";
+import loadingIcon from "../images/Icons/loading.svg";
 
-function SearchBar({ onSearch, viewWeather }) {
+function SearchBar({ onSearch, viewWeather, isLoading,setIsLoading,fetchCurrentLocationWeather }) {
   const [city, setCity] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -17,12 +18,12 @@ function SearchBar({ onSearch, viewWeather }) {
     setSuggestions(cities);
   };
 
-
   const handleSelectSuggestion = (suggestion) => {
     setCity(suggestion);
     setSuggestions([]);
+    setIsLoading(true); 
     onSearch(suggestion);
-    console.log(suggestions);
+
   };
 
   return (
@@ -34,14 +35,18 @@ function SearchBar({ onSearch, viewWeather }) {
         </h2>
         <p>Choose a location to see the weather forecast</p>
       </div>
-      <form>
+      <div className="input-container">
         <input
+        style={isLoading ? { color: "#BEBEBE" } : {}}
           type="text"
           placeholder="Search location"
           value={city}
           onChange={(e) => handleInputChange(e.target.value)}
           autoComplete="off"
         />
+        {isLoading && (
+          <img src={loadingIcon} alt="Loading..." className="loading-icon" />
+        )}
         {suggestions.length > 0 && (
           <ul className="suggestions-list">
             {suggestions.map((suggestion, index) => (
@@ -55,9 +60,11 @@ function SearchBar({ onSearch, viewWeather }) {
           </ul>
         )}
         <div className="view-weather-btn">
+          <button onClick={fetchCurrentLocationWeather}>Use Current Location</button>
           <button onClick={viewWeather}>View Weather</button>
         </div>
-      </form>
+        
+      </div>
     </div>
   );
 }

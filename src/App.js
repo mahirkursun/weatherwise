@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { fetchWeather } from "./api/WeatherAPI";
+import { fetchWeatherByCoords } from "./api/LocationAPI";
 import WeatherCard from "./components/WeatherCard";
 import SearchBar from "./components/SearchBar";
 import { useSwipeable } from "react-swipeable";
 import "./App.css";
 function App() {
-  
   const [cities, setCities] = useState(() => {
     const savedCities = localStorage.getItem("cities");
     return savedCities ? JSON.parse(savedCities) : [];
@@ -13,7 +13,28 @@ function App() {
 
   const [activeCityIndex, setActiveCityIndex] = useState(0);
   const [isSearchPage, setIsSearchPage] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const handleFetchCurrentLocationWeather = () => {
+    setIsLoading(true);
 
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        try {
+          const { latitude, longitude } = position.coords;
+          const weatherData = await fetchWeatherByCoords(latitude, longitude);
+          handleSearch(weatherData.name);
+        } catch (error) {
+          console.error("Unable to fetch weather data:", error);
+          setIsLoading(false);
+        }
+      },
+      (error) => {
+        console.error("Geolocation permission denied:", error);
+        setIsLoading(false);
+      }
+    );
+  };
   useEffect(() => {
     localStorage.setItem("cities", JSON.stringify(cities));
   }, [cities]);
@@ -23,8 +44,11 @@ function App() {
       (c) => c.name.toLowerCase() === city.toLowerCase()
     );
     if (existingCity) {
-      setActiveCityIndex(cities.indexOf(existingCity));
-      setIsSearchPage(false);
+      setTimeout(() => {
+        setIsLoading(false);
+        setActiveCityIndex(cities.indexOf(existingCity));
+        setIsSearchPage(false);
+      }, 3000);
       return;
     }
     try {
@@ -36,7 +60,13 @@ function App() {
         forecast: forecast,
       };
       addCityWeather(newCity);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
     } catch (error) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
       console.error("Error fetching weather:", error);
       alert("City not found!");
     }
@@ -70,7 +100,6 @@ function App() {
     const newCities = cities.filter((city) => city.name !== cityName);
     setCities(newCities);
     localStorage.setItem("cities", JSON.stringify(newCities));
-
     if (newCities.length === 0) {
       setIsSearchPage(true);
     } else if (cityIndex === newCities.length) {
@@ -79,13 +108,20 @@ function App() {
       setActiveCityIndex(cityIndex);
     }
   };
+
   const viewWeather = () => {
     const savedCities = localStorage.getItem("cities");
     if (savedCities) {
       const cities = JSON.parse(savedCities);
 
       if (cities.length > 0) {
-        handleSearch(cities[0].name);
+        const existingCity = cities.find(
+          (c) => c.name.toLowerCase() === cities[0].name.toLowerCase()
+        );
+        if (existingCity) {
+          setActiveCityIndex(cities.indexOf(existingCity));
+          setIsSearchPage(false);
+        }
       } else {
         alert("Please add a city first!");
       }
@@ -98,6 +134,9 @@ function App() {
           cities={cities}
           onSearch={handleSearch}
           viewWeather={viewWeather}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          fetchCurrentLocationWeather={handleFetchCurrentLocationWeather}
         />
       ) : (
         <>
