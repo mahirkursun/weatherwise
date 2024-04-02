@@ -100,6 +100,8 @@ form input[type="text"] {
   font-size: 1em;
   border-radius: 10px;
 }
+
+
 form .location-btn {
   height: 5.2vh;
   padding: 10px;
@@ -114,7 +116,35 @@ form .location-btn {
   border-radius: 5px;
   cursor: pointer;
 }
+.suggestions-list {
+  list-style: none; /* Liste işaretlerini kaldır */
+  margin: 0; /* Varsayılan kenar boşluğunu kaldır */
+  padding: 0; /* Varsayılan dolgu boşluğunu kaldır */
+  position: absolute; /* Arama çubuğu konumuna göre ayarla */
+  width: 58vw; /* Arama çubuğu genişliği kadar yap */
+  background-color: #fff; /* Arka plan rengi beyaz */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  border-radius: 0 0 4px 4px; /* Alt köşeler için yuvarlak köşe */
+  max-height: 300px; /* Maksimum yükseklik belirle */
+  overflow-y: auto; /* Liste çok uzunsa kaydırma çubuğu ekle */
+  z-index: 10; /* Diğer öğelerin üzerinde göster */
+  top: 58vh; /* Arama çubuğunun tam altında */
+}
 
+.suggestions-list li {
+  padding: 10px; /* Liste öğeleri için dolgu boşluğu */
+  border-bottom: 1px solid #ddd; /* Liste öğeleri arasında ayrım çizgisi */
+  cursor: pointer; /* Fare imlecini işaretçiye dönüştür */
+  transition: background-color 0.2s; /* Arka plan rengi geçişi için animasyon */
+}
+
+.suggestions-list li:last-child {
+  border-bottom: none; /* Listenin son öğesinde alt çizgiyi kaldır */
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0; /* Üzerine gelindiğinde arka plan rengini değiştir */
+}
 button {
   display: flex;
   font-size: 1em;
