@@ -114,7 +114,8 @@ html {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 55vw;
+  width: 55.5vw;
+  overflow: hidden;
   background-color: #3b3b54;
   font-family: "Nunito", sans-serif;
   color: #ddd;
@@ -539,7 +540,7 @@ button:hover {
 @media (min-width: 1025px) {
   .App {
     max-width: 960px;
-    padding: 10px 20px;
+
     margin: auto;
     font-size: 1.2em;
   }
