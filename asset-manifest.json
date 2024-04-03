@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/weatherwise/static/css/main.a743199d.css",
+    "main.js": "/weatherwise/static/js/main.84f2009d.js",
+    "static/media/cloudy_day.svg": "/weatherwise/static/media/cloudy_day.4b7d1b7fd0e11cbecf9f7de285457bdc.svg",
+    "static/media/fewclouds_day.svg": "/weatherwise/static/media/fewclouds_day.91dae6abea739128bf6009f8c4209516.svg",
+    "static/media/rain_day.svg": "/weatherwise/static/media/rain_day.5ef9be2fe69c6bec7a30a332ddc4a1bc.svg",
+    "static/media/storm_day.svg": "/weatherwise/static/media/storm_day.c54e48f7ad5ed5725d668a7aa83bd2e7.svg",
+    "static/media/rain_night.svg": "/weatherwise/static/media/rain_night.909cb06df6858e335a5127df33fcb8c5.svg",
+    "static/media/fewclouds_night.svg": "/weatherwise/static/media/fewclouds_night.82fa0014d7062eea2d813018bbcefd85.svg",
+    "static/media/cloudy_night.svg": "/weatherwise/static/media/cloudy_night.ba77ee6d0471aa9f234339e9b1992109.svg",
+    "static/media/clear_day.svg": "/weatherwise/static/media/clear_day.913fd0af86f304cc3ef5bb248633681c.svg",
+    "static/media/clear_night.svg": "/weatherwise/static/media/clear_night.d0fd3c6a84b444bb87edbcd49b0b416d.svg",
+    "static/media/storm_night.svg": "/weatherwise/static/media/storm_night.8a07d5175031a4019911f96ce10e6dcf.svg",
+    "static/media/Background.svg": "/weatherwise/static/media/Background.7a2c820e94c9c508d348.svg",
+    "static/media/marca.svg": "/weatherwise/static/media/marca.777b8b6f015bd790ee8198dfcae68e2b.svg",
+    "static/media/wind_speed.svg": "/weatherwise/static/media/wind_speed.10ebc957ffa244c32e4af899f13313a9.svg",
+    "static/media/loading.svg": "/weatherwise/static/media/loading.b35e04c2c0f933eb4e5f24226e311a9b.svg",
+    "static/media/probability_of_rain.svg": "/weatherwise/static/media/probability_of_rain.934dd9fe9d039636a5046ef806076f4c.svg",
+    "static/media/thermal_sensation.svg": "/weatherwise/static/media/thermal_sensation.49257c2d0d37888278490fcc2247dc0d.svg",
+    "static/media/air_humidity.svg": "/weatherwise/static/media/air_humidity.1d25c299cab13dd9160b95ccfbe23743.svg",
+    "index.html": "/weatherwise/index.html",
+    "main.a743199d.css.map": "/weatherwise/static/css/main.a743199d.css.map",
+    "main.84f2009d.js.map": "/weatherwise/static/js/main.84f2009d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a743199d.css",
+    "static/js/main.84f2009d.js"
+  ]
+}
