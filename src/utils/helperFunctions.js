@@ -4,9 +4,9 @@ export const capitalize = (string) => {
 
 export const formatDate = (timestamp) => {
   const date = new Date(timestamp * 1000);
-  return date.toLocaleDateString("tr-TR", {
+  return date.toLocaleDateString("en-EN", {
     weekday: "short",
-    day: "numeric",
-    month: "short",
+   
+
   });
 };

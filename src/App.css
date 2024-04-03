@@ -162,7 +162,7 @@ html {
 button {
   display: flex;
   font-size: 1em;
-  width: 20vw;
+  width: 22vw;
   margin: 5px 0;
   text-align: center;
   display: flex;
@@ -193,7 +193,7 @@ button:hover {
 
   justify-content: space-around;
   max-width: 96%;
-
+  margin-top: 20px;
   padding: 20px;
 }
 .weekly-forecast .temp_min {
@@ -399,7 +399,7 @@ button:hover {
 
 @media (max-width: 768px) {
   .weather-card {
-    margin: 10px auto;
+ 
     width: 90%;
   }
   .day {
@@ -408,7 +408,7 @@ button:hover {
     padding: 5px;
   }
   .weekly-forecast {
-    padding: 10px;
+   
     justify-content: space-between;
   }
 
@@ -477,7 +477,10 @@ button:hover {
   input[type="text"],
   button {
     width: 100%;
-    margin: 5px 0;
+    margin: 5px 0px;
+  }
+  .search-button{
+    margin: 5px 30px;
   }
   .weather-icon {
     width: 60vw;
@@ -501,6 +504,7 @@ button:hover {
 @media (min-width: 601px) and (max-width: 1024px) {
   .App {
     padding: 10px;
+    margin: auto;
   }
   .weather-icon {
     width: 50vw;
@@ -510,10 +514,16 @@ button:hover {
   input[type="text"] {
     width: 100%;
   }
-
+  .weather-card {
+    width: 94%;
+  }
   button {
     width: 70%;
-    margin: 5px 0;
+    margin: 5px 0px;
+  }
+  
+  .search-button{
+    margin: 5px 30px;
   }
   .search-bar .search-title {
     font-size: 1.3em;
@@ -529,15 +539,20 @@ button:hover {
 @media (min-width: 1025px) {
   .App {
     max-width: 960px;
-    padding: 20px;
+    padding: 10px 20px;
     margin: auto;
+    font-size: 1.2em;
   }
   .weather-icon {
     width: 30vw;
     bottom: -10vh;
     right: -5vw;
   }
-
+  .weekly-forecast img {
+    width: 7vw;
+    height: auto;
+   
+  }
   .search-button {
     margin-bottom: 15px;
     width: 20vw;

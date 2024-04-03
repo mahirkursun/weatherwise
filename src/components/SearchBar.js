@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import logo from "../images/logo/marca.svg";
 import { fetchCities } from "../api/CitiesAPI";
 import loadingIcon from "../images/Icons/loading.svg";
+import { getName } from "country-list";
 
-function SearchBar({ onSearch, viewWeather, isLoading,setIsLoading,fetchCurrentLocationWeather }) {
+function SearchBar({
+  onSearch,
+  viewWeather,
+  isLoading,
+  setIsLoading,
+  fetchCurrentLocationWeather,
+}) {
   const [city, setCity] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -21,9 +28,8 @@ function SearchBar({ onSearch, viewWeather, isLoading,setIsLoading,fetchCurrentL
   const handleSelectSuggestion = (suggestion) => {
     setCity(suggestion);
     setSuggestions([]);
-    setIsLoading(true); 
+    setIsLoading(true);
     onSearch(suggestion);
-
   };
 
   return (
@@ -37,7 +43,7 @@ function SearchBar({ onSearch, viewWeather, isLoading,setIsLoading,fetchCurrentL
       </div>
       <div className="input-container">
         <input
-        style={isLoading ? { color: "#BEBEBE" } : {}}
+          style={isLoading ? { color: "#BEBEBE" } : {}}
           type="text"
           placeholder="Search location"
           value={city}
@@ -54,16 +60,18 @@ function SearchBar({ onSearch, viewWeather, isLoading,setIsLoading,fetchCurrentL
                 key={index}
                 onClick={() => handleSelectSuggestion(suggestion.split(",")[0])}
               >
-                {suggestion}
+                {suggestion.split(", ")[0]},{" "}
+                {getName(suggestion.split(", ")[1])}
               </li>
             ))}
           </ul>
         )}
         <div className="view-weather-btn">
-          <button onClick={fetchCurrentLocationWeather}>Use Current Location</button>
+          <button onClick={fetchCurrentLocationWeather}>
+            Use Current Location
+          </button>
           <button onClick={viewWeather}>View Weather</button>
         </div>
-        
       </div>
     </div>
   );
