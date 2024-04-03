@@ -1,5 +1,5 @@
 import React from "react";
-import { formatDate } from "../utils/helperFunctions";
+import { formatDateForecast } from "../utils/helperFunctions";
 import clear_day from "../images/Icons/clear_day.svg";
 import cloudy_day from "../images/Icons/cloudy_day.svg";
 import rain_day from "../images/Icons/rain_day.svg";
@@ -38,7 +38,7 @@ function WeeklyForecast({ data }) {
     <div className="weekly-forecast">
       {forecastDays.map((day) => (
         <div key={day.dt} className="day">
-          <span className="forecast_date">{formatDate(day.dt)}</span>
+          <span className="forecast_date">{formatDateForecast(day.dt)}</span>
           <img
             width={"80vw"}
             src={iconMapping[day.weather[0].icon]}

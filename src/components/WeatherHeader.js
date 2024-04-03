@@ -10,6 +10,7 @@ import cloudy_night from "../images/Background/cloudy_night.svg";
 import rain_night from "../images/Background/rain_night.svg";
 import fewclouds_night from "../images/Background/fewclouds_night.svg";
 import storm_night from "../images/Background/storm_night.svg";
+import { formatDateHeader } from "../utils/helperFunctions";
 
 const WeatherHeader = ({ city, data, removeCity }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -61,14 +62,7 @@ const WeatherHeader = ({ city, data, removeCity }) => {
       />
       <div className="cover-letter">
         <h2>{`${data.name}, ${data.sys.country}`}</h2>
-        <p>
-          {new Date(data.dt * 1000).toLocaleDateString("en-US", {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
+        <p>{formatDateHeader(data.dt)}</p>
       </div>
       <WeatherIcon data={data} />
       <div className="subtitle">
