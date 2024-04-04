@@ -1,6 +1,6 @@
 # Hava Durumu Uygulaması
 
-Bu uygulama, kullanıcılara farklı şehirlerin hava durumu tahminlerini görüntüleme imkanı sunar. Kullanıcılar, arama yaparak istedikleri şehirlerin anlık hava durumu bilgilerine ve bir haftalık hava durumu tahminlerine ulaşabilirler. Uygulama ayrıca, kullanıcının mevcut konumundan hava durumu verilerini otomatik olarak alabilme özelliğine de sahiptir.
+Bu uygulama, kullanıcılara farklı şehirlerin hava durumu tahminlerini görüntüleme imkanı sunar. Kullanıcılar, arama yaparak istedikleri şehirlerin anlık hava durumu bilgilerine ve 5 günlük hava durumu tahminlerine ulaşabilirler. Uygulama ayrıca, kullanıcının mevcut konumundan hava durumu verilerini otomatik olarak alabilme özelliğine de sahiptir.
 
 ## Canlı Demo
 
