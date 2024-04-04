@@ -1,5 +1,10 @@
 # Hava Durumu Uygulaması
 
+##Canlı Demo
+Bu uygulamayı çalışır halde görmek için aşağıdaki linke tıklayabilirsiniz:
+
+[iWeather](https://mahirkursun.github.io/weatherwise/)
+
 Bu uygulama, kullanıcılara farklı şehirlerin hava durumu tahminlerini görüntüleme imkanı sunar. Kullanıcılar, arama yaparak istedikleri şehirlerin anlık hava durumu bilgilerine ve bir haftalık hava durumu tahminlerine ulaşabilirler. Uygulama ayrıca, kullanıcının mevcut konumundan hava durumu verilerini otomatik olarak alabilme özelliğine de sahiptir.
 
 ## Kullanılan Teknolojiler
@@ -37,7 +42,7 @@ Projeyi lokalde çalıştırmak için aşağıdaki adımları takip edebilirsini
 
 Artık projeniz yerel ortamınızda çalışıyor olmalıdır. Tarayıcınızdan http://localhost:3000 adresine giderek projeyi görüntüleyebilirsiniz.
 
-Çevre Değişkenleri
+## Çevre Değişkenleri
 
 Uygulamanın düzgün çalışabilmesi için, OpenWeatherMap API anahtarınızı içeren bir .env dosyası oluşturmanız gerekmektedir. Aşağıdaki değişkenleri .env dosyanıza ekleyin:
 
