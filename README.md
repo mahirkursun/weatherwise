@@ -1,6 +1,7 @@
 # Hava Durumu Uygulaması
 
-##Canlı Demo
+## Canlı Demo
+
 Bu uygulamayı çalışır halde görmek için aşağıdaki linke tıklayabilirsiniz:
 
 [iWeather](https://mahirkursun.github.io/weatherwise/)
