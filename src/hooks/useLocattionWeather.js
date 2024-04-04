@@ -21,7 +21,7 @@ const useLocationWeather =
         console.error("Geolocation error:", error);
         setIsLoading(false);
       },
-      { timeout: 5000 }
+      { timeout: 10000 }
     );
   };
 
