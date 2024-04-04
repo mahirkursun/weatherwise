@@ -15,9 +15,19 @@ const fetchCities = async (city) => {
     });
     const data = response.data;
 
-    return data.list.map((city) => `${city.name}, ${city.sys.country}`); 
+    return data.list.map((city) => `${city.name}, ${city.sys.country}`);
   } catch (error) {
     console.error("Error fetching cities with axios:", error);
+
+    if (error.response) {
+      if (error.response.status === 404) {
+        alert("City not found.");
+      } else if (error.response.status === 429) {
+        alert("You have exceeded your API request limit.");
+      }
+    } else if (error.request) {
+      alert("No response received from the server.");
+    }
 
     return [];
   }
