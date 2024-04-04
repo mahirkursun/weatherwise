@@ -20,7 +20,8 @@ const useLocationWeather =
         alert("Geolocation permission denied. Please check your location settings or grant permission.");
         console.error("Geolocation error:", error);
         setIsLoading(false);
-      }
+      },
+      { timeout: 5000 }
     );
   };
 
